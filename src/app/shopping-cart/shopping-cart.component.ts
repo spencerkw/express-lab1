@@ -23,4 +23,35 @@ export class ShoppingCartComponent implements OnInit {
     });
   }
 
+  addItem(form: any): void {
+    let newItem: CartItem = {
+      product: form.value.name,
+      id: Number(form.value.id),
+      price: Number(form.value.price),
+      quantity: Number(form.value.quantity)
+    };
+    this.cart.addItem(newItem).subscribe(response => {
+      this.shoppingCart = response;
+    });
+    form.resetForm();
+  }
+
+  deleteItem(id: number): void {
+    this.cart.deleteItem(id).subscribe(response => {
+      this.shoppingCart = response;
+    });
+  }
+
+  updateItem(id: number, form: any): void {
+    let updatedItem: CartItem = {
+      product: form.value.name,
+      id: Number(form.value.id),
+      price: Number(form.value.price),
+      quantity: Number(form.value.quantity)
+    };
+    this.cart.updateItem(id, updatedItem).subscribe(response => {
+      this.shoppingCart = response;
+    });
+  }
+
 }
