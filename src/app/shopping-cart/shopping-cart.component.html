@@ -1,0 +1,10 @@
+<section>
+  <h1>Shopping Cart</h1>
+
+  <div class="item-display" *ngFor="let item of shoppingCart">
+    <p>Product: {{item.product}}</p>
+    <p>ID: {{item.id}}</p>
+    <p>Price: {{item.price | currency}}</p>
+    <p>Quantity: {{item.quantity}}</p>
+  </div>
+</section>
