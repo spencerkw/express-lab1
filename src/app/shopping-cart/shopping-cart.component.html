@@ -4,9 +4,7 @@
   <form #addForm="ngForm" (ngSubmit)="addItem(addForm)">
     <h3>Add a New Item</h3>
     <label for="">Product Name:</label>
-    <input type="text" ngModel name="name">
-    <label for="">ID:</label>
-    <input type="number" ngModel name="id">
+    <input type="text" ngModel name="product">
     <label for="">Price:</label>
     <input type="number" ngModel name="price">
     <label for="">Quantity:</label>
@@ -15,20 +13,12 @@
   </form>
 
   <div class="item-display" *ngFor="let item of shoppingCart; index as i">
-    <p>Product: {{item.product}}</p>
-    <p>ID: {{item.id}}</p>
+    <h4>{{item.product}}</h4>
     <p>Price: {{item.price | currency}}</p>
     <p>Quantity: {{item.quantity}}</p>
     <button (click)="deleteItem(item.id)">X</button>
-    <form #editForm="ngForm" (ngSubmit)="updateItem(i, editForm)">
-      <p>Edit Item</p>
-      <label for="">Product Name:</label>
-      <input type="text" [(ngModel)]="item.product" name="name">
-      <label for="">ID:</label>
-      <input type="number" [(ngModel)]="item.id" name="id">
-      <label for="">Price:</label>
-      <input type="number" [(ngModel)]="item.price" name="price">
-      <label for="">Quantity:</label>
+    <form #editForm="ngForm" (ngSubmit)="updateItem(item)">
+      <label for="">Update Quantity:</label>
       <input type="number" [(ngModel)]="item.quantity" name="quantity">
       <button>Update</button>
     </form>

@@ -25,10 +25,7 @@ export class ShoppingCartComponent implements OnInit {
 
   addItem(form: any): void {
     let newItem: CartItem = {
-      product: form.value.name,
-      id: Number(form.value.id),
-      price: Number(form.value.price),
-      quantity: Number(form.value.quantity)
+      ...form.value
     };
     this.cart.addItem(newItem).subscribe(response => {
       this.shoppingCart = response;
@@ -42,14 +39,8 @@ export class ShoppingCartComponent implements OnInit {
     });
   }
 
-  updateItem(id: number, form: any): void {
-    let updatedItem: CartItem = {
-      product: form.value.name,
-      id: Number(form.value.id),
-      price: Number(form.value.price),
-      quantity: Number(form.value.quantity)
-    };
-    this.cart.updateItem(id, updatedItem).subscribe(response => {
+  updateItem(item: CartItem): void {
+    this.cart.updateItem(item).subscribe(response => {
       this.shoppingCart = response;
     });
   }

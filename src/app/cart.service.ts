@@ -18,8 +18,8 @@ export class CartService {
     return this.http.post("/api/cart-items", newItem, { responseType: "json" });
   }
 
-  updateItem(id: number, newItem: CartItem): Observable<any> {
-    return this.http.put(`/api/cart-items/${id}`, newItem, { responseType: "json" });
+  updateItem(newItem: CartItem): Observable<any> {
+    return this.http.put(`/api/cart-items/${newItem.id}`, newItem, { responseType: "json" });
   }
 
   deleteItem(id: number): Observable<any> {
