@@ -10,11 +10,16 @@ import { CartService } from '../cart.service';
 export class ShoppingCartComponent implements OnInit {
 
   shoppingCart: CartItem[];
+  addFormVisible: boolean = false;
 
   constructor(private cart: CartService) { }
 
   ngOnInit() {
     this.getCart();
+  }
+
+  toggleAddForm() {
+    this.addFormVisible = !this.addFormVisible;
   }
 
   getCart(): void {
