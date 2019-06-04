@@ -2,7 +2,6 @@
 const express = require("express");
 const cart = express.Router();
 const pool = require("./connection");
-const shoppingCart = require("./cart-items");
 
 function selectAll(res) {
   pool.query("SELECT * FROM shoppingcart ORDER BY id").then(result => {
