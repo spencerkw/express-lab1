@@ -3,6 +3,7 @@
 main {
   padding: 10px;
   font-family: inherit;
+  color: inherit;
 
   display: flex;
   flex-direction: column;
@@ -43,7 +44,7 @@ button {
 }
 
 .add-form {
-  background-color: #20aff7;
+  background-color: rgba(32, 175, 247, 0.7);
 
   display: flex;
   flex-direction: column;
@@ -66,7 +67,7 @@ h3 {
 }
 
 .item-display {
-  background-color: #ae5bd9;
+  background-color: rgba(153, 50, 204, 0.8);
   margin: 20px;
   position: relative;
 }
