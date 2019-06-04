@@ -3,7 +3,7 @@
 
   <button class="toggle-form-btn" (click)="toggleAddForm()">Add Item</button>
 
-  <form class="add-form" *ngIf="addFormVisible" #addForm="ngForm" (ngSubmit)="addItem(addForm)">
+  <form class="add-form" *ngIf="addFormVisible" #addForm="ngForm" (ngSubmit)="addItem(addForm); toggleAddForm()">
     <h3>Add a New Item</h3>
     <label for="">Product Name:</label>
     <input type="text" ngModel name="product">
