@@ -7,7 +7,7 @@ html, body {
 }
 
 html {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://www.washingtonpost.com/resizer/iH0pxnFfPOqvkyg2CB2W5904h6E=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/PV6GFHXROAI6PFPD57ZIJZY4RU.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/grocery-store.jpg");
   background-repeat: no-repeat, no-repeat;
   background-size: cover, cover;
   background-attachment: fixed, fixed;
